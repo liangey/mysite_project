@@ -14,8 +14,8 @@ os.environ['DJANGO_SETTINGS_MODULE'] = 'MySite.settings'
 if __name__ == '__main__':
 
     send_mail(
-        '来自www.yyhuiju.com的测试邮件',
+        '来自测试邮件',
         '这里是test站点',
-        'yyhuiju@wtoip.com',
-        ['291406980@qq.com'],
+        'ddd@sina.com',
+        ['ddd@qq.com'],
     )

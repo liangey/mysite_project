@@ -132,7 +132,7 @@ STATICFILES_DIRS = [
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.wtoip.com'
+EMAIL_HOST = 'smtp.sina.com'
 EMAIL_PORT = 25
-EMAIL_HOST_USER = 'yyhuiju@wtoip.com'
-EMAIL_HOST_PASSWORD = 'boao2017'
+EMAIL_HOST_USER = 'xxxx@qq.com'
+EMAIL_HOST_PASSWORD = 'xxx'
