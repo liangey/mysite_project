@@ -6,6 +6,7 @@
 #@File : forms.py
 #@Software : PyCharm
 from django import forms
+from django.forms import fields
 from captcha.fields import CaptchaField
 
 class UserForm(forms.Form):
@@ -28,3 +29,7 @@ class RegisterForm(forms.Form):
     sex=forms.ChoiceField(label='性别',choices=gender)
     captcha=CaptchaField(label='验证码')
 
+
+
+class FileForm(forms.Form):
+    file=fields.FileField()

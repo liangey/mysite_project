@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from login import models,forms
 import hashlib
+import os
 
 # Create your views here.
 
@@ -95,3 +96,22 @@ def logout(request):
     request.session.flush()
     #在顶部额外导入了redirect，用于logout后，页面重定向到‘index’首页
     return redirect("/index/")
+
+
+
+def file_upload(request):
+    if request.method=="GET":
+        obj=forms.FileForm()
+        return render(request,'upload.html',{'obj':obj})
+    elif request.method=="POST":
+        obj=forms.FileForm(request.POST,request.FILES)
+        if obj.is_valid():
+            print(obj.cleaned_data)
+            with open('static/image/'+obj.cleaned_data['file'].name,'wb')as f:
+                for line in obj.cleaned_data['file'].chunks():
+                    f.write()
+            f.close()
+        else:
+            print(obj.errors)
+        return HttpResponse('OK')
+
