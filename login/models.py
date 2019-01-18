@@ -24,3 +24,9 @@ class User(models.Model):
         verbose_name_plural='用户'
 
 
+
+'''
+class Contach(models.Model):
+    title=models.CharField(max_length=30)
+    content=models.CharField(max_length=200)
+'''

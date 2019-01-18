@@ -33,3 +33,12 @@ class RegisterForm(forms.Form):
 
 class FileForm(forms.Form):
     file=fields.FileField()
+
+
+class ContactForm(forms.Form):
+    subject=forms.CharField(max_length=100,label='主题')
+    message=forms.CharField(widget=forms.Textarea)
+    sender=forms.EmailField()
+    cc_myself=forms.BooleanField(required=False)
+
+

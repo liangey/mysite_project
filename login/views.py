@@ -115,3 +115,17 @@ def file_upload(request):
             print(obj.errors)
         return HttpResponse('OK')
 
+
+def contact(request):
+    if request.method=="POST":
+        contact_form=forms.ContactForm(request.POST)
+        if contact_form.is_valid():
+            return HttpResponse('/')
+    else:
+        contact_form=forms.ContactForm()
+    return render(request,'contact.html',{'contact_form':contact_form})
+
+
+
+
+
